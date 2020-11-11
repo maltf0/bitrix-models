@@ -42,7 +42,7 @@ class ServiceProvider
             Capsule::enableQueryLog();
 
             $em = \Bitrix\Main\EventManager::getInstance();
-            $em->addEventHandler('main', 'OnAfterEpilog', [IlluminateQueryDebugger::class, 'onAfterEpilogHandler']);
+            $em->addEventHandler('main', 'OnEpilog', [IlluminateQueryDebugger::class, 'onAfterEpilogHandler']);
         }
 
         static::addEventListenersForHelpersHighloadblockTables($capsule);
